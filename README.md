@@ -15,3 +15,10 @@ pip install -r requirements.txt
 ```
 
 ## 💻 실행 방법
+### Step 1. Dataset 준비
+- 자세한 내용은 [README.md](data/README.md)를 참고해주세요.
+
+### Step 2. 입력 프롬프트에 적합한 모듈 라이브러리 선택
+```
+python src/generation.py --dataset_name "dataset_name" --model_name "model_name"
+```
