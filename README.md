@@ -3,6 +3,11 @@
 ### 입력 프롬프트를 최적으로 처리하기 위한 Open-ended, Closed-ended 프롬프트 모듈 라이브러리
 
 ### 💡 예시
+- 외부 지식이 필요한 Open-ended 문제의 경우, RAG 기반 지식 보강 모듈과 함께 문제 해결에 필요한 프롬프트 모듈을 선택
+![image](image/ex_open_ended.png)
+
+- 내부 지식만으로 해결 가능한 Closed-ended 문제의 경우, RAG 모듈 없이 문제 해결에 필요한 프롬프트 모듈만 선택
+![image](image/ex_closed_ended.png)
 
 ## ⚙️ Requirements
 ```
