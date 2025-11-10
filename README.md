@@ -24,17 +24,12 @@ python src/generation.py --dataset_name "dataset_name" --model_name "model_name"
 ```
 
 ### Reference
-[Self-Discover: Large Language Models Self-Compose Reasoning Structures](https://proceedings.neurips.cc/paper_files/paper/2024/file/e41efb03e20ca3c231940a3c6917ef6f-Paper-Conference.pdf)
+[Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution](https://arxiv.org/pdf/2309.16797)
 ```
-@inproceedings{NEURIPS2024_e41efb03,
- author = {Zhou, Pei and Pujara, Jay and Ren, Xiang and Chen, Xinyun and Cheng, Heng-Tze and Le, Quoc V. and H., Ed and Zhou, Denny and Mishra, Swaroop and Zheng, Huaixiu Steven},
- booktitle = {Advances in Neural Information Processing Systems},
- editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
- pages = {126032--126058},
- publisher = {Curran Associates, Inc.},
- title = {SELF-DISCOVER: Large Language Models Self-Compose Reasoning Structures},
- url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/e41efb03e20ca3c231940a3c6917ef6f-Paper-Conference.pdf},
- volume = {37},
- year = {2024}
+@article{fernando2023promptbreeder,
+  title={Promptbreeder: Self-referential self-improvement via prompt evolution},
+  author={Fernando, Chrisantha and Banarse, Dylan and Michalewski, Henryk and Osindero, Simon and Rockt{\"a}schel, Tim},
+  journal={arXiv preprint arXiv:2309.16797},
+  year={2023}
 }
 ```
