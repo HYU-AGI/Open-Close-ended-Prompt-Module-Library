@@ -20,6 +20,7 @@ class SelectModules:
         self.rag_module = f"1. {reasoning_modules[0]}"  # open-ended 처리를 위한 모듈
         self.open_ended = False 
         self.selected_modules = None
+        self.next_step = True
 
 
     def extract_tags(self, response, step='select'):
@@ -150,7 +151,6 @@ def main():
             "id": data['id'],
             "question": data['question'],
             "answer": data.get('answer'),
-            "method": args.method,
             "selected_modules": runner.selected_modules,
             "open_ended": runner.open_ended,
         }
