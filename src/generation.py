@@ -2,11 +2,31 @@ import argparse
 import logging
 import os
 from datetime import datetime
-from models import load_model
+from models import load_model, generate_response, Args as GenArgs
 import json
 from prompts import *
 import re
 from tqdm import tqdm
+
+
+class ModelWrapper:
+    def __init__(self, model, tokenizer, args):
+        self.model = model
+        self.tokenizer = tokenizer
+        self.args = args
+    
+    def generate_response(self, messages):
+        gen_args = GenArgs(
+            model_name=self.args.model_name,
+            model_id=self.args.model_id,
+            cache_dir=self.args.cache_dir,
+            max_new_tokens=self.args.max_new_tokens,
+            do_sample=self.args.do_sample,
+            top_p=self.args.top_p,
+            top_k=self.args.top_k,
+            temperature=self.args.temperature
+        )
+        return generate_response(self.model, self.tokenizer, messages, gen_args)
 
 
 class SelectModules:
@@ -134,7 +154,8 @@ def main():
 
     args.model_id = model_version[args.model_name]
 
-    model = load_model(args)
+    model, tokenizer = load_model(args)
+    model = ModelWrapper(model, tokenizer, args)
 
     data_dir = os.path.join(args.data_dir, args.dataset_name)
     data_path = os.path.join(data_dir, f"{args.dataset_name}.json")
