@@ -11,9 +11,9 @@ from tqdm import tqdm
 
 class ModelWrapper:
     def __init__(self, model, tokenizer, args):
-        self.model = model
-        self.tokenizer = tokenizer
         self.args = args
+        self.model_name = self.args.model_name
+        self.model, self.tokenizer = load_local_model(self.args)
     
     def generate_response(self, messages):
         gen_args = GenArgs(
@@ -155,8 +155,7 @@ def main():
 
     args.model_id = model_version[args.model_name]
 
-    model, tokenizer = load_model(args)
-    model = ModelWrapper(model, tokenizer, args)
+    model = ModelWrapper(args)
 
     data_dir = os.path.join(args.data_dir, args.dataset_name)
     data_path = os.path.join(data_dir, f"{args.dataset_name}.json")
@@ -188,3 +187,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
