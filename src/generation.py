@@ -40,8 +40,7 @@ class SelectModules:
         self.rag_module = f"1. {reasoning_modules[0]}"  # open-ended 처리를 위한 모듈
         self.open_ended = False 
         self.selected_modules = None
-        self.next_step = True
-
+        
 
     def extract_tags(self, response, step='select'):
         pattern = r"<SELECT/>\s*(\[.*?\])\s*</SELECT>"
@@ -88,7 +87,6 @@ class SelectModules:
             self.selected_modules = self.extract_tags(response)
         except Exception as e:
             self.selected_modules = response
-            self.next_step = False
             print(e)
 
 
@@ -187,4 +185,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
